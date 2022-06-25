@@ -2,6 +2,7 @@ import tic_tac_toe
 
 
 def main() -> None:
+
     board = tic_tac_toe.Board()
 
     game_board = board.board
