@@ -1,23 +1,26 @@
 # Steps to complete the Tic Tac Toe Project
 # Step 1 : Create a board using a 2-dimensional array and initialize each element as empty.
-import array
-import numpy as np
-from numpy import ndarray
+
+import os
+os.system("clear")
 
 
 class Board:
-    board = []
 
     def __init__(self) -> None:
         print("Board object created")
+        self.cells = [" ", " ", " ", " ", " ", " ", " ", " ", " ", " "]
 
-    def create_board(self, board) -> ndarray:
-        self.board = np.array([["-", "-", "-"], ["-", "-", "-"], ["-", "-", "-"]])
-        return board
+    def display(self) -> None:
+        print(f" {self.cells[1]} | {self.cells[2]} | {self.cells[3]} ")
+        print("----------")
+        print(f" {self.cells[4]} | {self.cells[5]} | {self.cells[6]} ")
+        print("----------")
+        print(f" {self.cells[7]} | {self.cells[8]} | {self.cells[9]} ")
 
-    def print_board(self) -> None:
-        for row in self.board:
-            print(row)
+
+def print_header() -> None:
+    print("Welcome to Tic-Tac-Toe \n")
 
 # Step 2: Write a function to check whether the board is filled or not.
 # Iterate over the board and return false if the board contains an empty sign or else return true.
