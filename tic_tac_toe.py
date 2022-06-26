@@ -1,9 +1,6 @@
 # Steps to complete the Tic Tac Toe Project
 # Step 1 : Create a board using a 2-dimensional array and initialize each element as empty.
 
-import os
-os.system("clear")
-
 
 class Board:
 
@@ -22,6 +19,7 @@ class Board:
 def print_header() -> None:
     print("Welcome to Tic-Tac-Toe \n")
 
+
 # Step 2: Write a function to check whether the board is filled or not.
 # Iterate over the board and return false if the board contains an empty sign or else return true.
 
@@ -29,6 +27,35 @@ def print_header() -> None:
 # Step 3: Write a function to check whether a player has won or not.
 # We have to check all the possibilities that we discussed in the previous section.
 # Check for all the rows, columns, and two diagonals.
+class Player:
+    list_symbol = ['X', 'O']
+
+    def __init__(self, name) -> None:
+        self.name = name
+        self.symbol = ""
+
+
+def set_symbol(player1, player2):
+    print("choose symbol")
+    player1.symbol = input("Please choose X or O \n")
+
+    if player1.symbol == 'X':
+        player2.symbol = 'O'
+    else:
+        player2.symbol = 'X'
+
+
+p1 = Player("par")
+p2 = Player("alvi")
+
+set_symbol(p1, p2)
+
+print(p1.symbol)
+print(p2.symbol)
+
+# p2 = Player("alvi", 'O')
+# p3 = Player("sazaat", 'X')
+
 
 
 # Step 4: Write a function to show the board as we will show the board multiple times to the users while they are playing.
