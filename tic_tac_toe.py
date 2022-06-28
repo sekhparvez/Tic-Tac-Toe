@@ -15,6 +15,10 @@ class Board:
         print("----------")
         print(f" {self.cells[7]} | {self.cells[8]} | {self.cells[9]} ")
 
+    def is_board_filled(self) -> bool:
+        for val in self.cells:
+            return True if val != " " and self.cells[0] == " " else True
+
 
 def print_header() -> None:
     print("Welcome to Tic-Tac-Toe \n")
@@ -45,17 +49,18 @@ def set_symbol(player1, player2):
         player2.symbol = 'X'
 
 
-p1 = Player("par")
-p2 = Player("alvi")
+if __name__ == "__main__":
 
-set_symbol(p1, p2)
+    p1 = Player("par")
+    p2 = Player("alvi")
 
-print(p1.symbol)
-print(p2.symbol)
+    set_symbol(p1, p2)
+
+    print(p1.symbol)
+    print(p2.symbol)
 
 # p2 = Player("alvi", 'O')
 # p3 = Player("sazaat", 'X')
-
 
 
 # Step 4: Write a function to show the board as we will show the board multiple times to the users while they are playing.
