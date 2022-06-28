@@ -28,7 +28,7 @@ class Board:
     # Iterate over the board and return false if the board contains an empty sign or else return true.
     def is_board_filled(self) -> bool:
         for val in self.cells:
-            return True if val != " " and self.cells[0] == " " else True
+            return True if val != " " and self.cells[0] == " " else False
 
 
 # Step 3: Write a function to check whether a player has won or not.
