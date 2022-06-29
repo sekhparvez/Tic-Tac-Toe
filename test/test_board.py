@@ -1,15 +1,15 @@
-import tic_tac_toe
+from board import Board
 
 
 def test_board():
-    board = tic_tac_toe.Board()
+    board = Board()
     for index, val in enumerate(board.cells):
         if index == 0:
             continue
         val = "X"
         board.cells[index] = val
 
-    board.display()
+    print(board)
     print(board.is_board_filled())
 
 
