@@ -1,16 +1,21 @@
 import tic_tac_toe
+from board import Board
+from game import Game
+from player import Player
 
 
 def main() -> None:
-    board = tic_tac_toe.Board()
+    board = Board()
     print(board)
     tic_tac_toe.print_header()
 
-    p1 = tic_tac_toe.Player("par")
+    p1 = Player("par")
 
-    p2 = tic_tac_toe.Player("alvi")
+    p2 = Player("alvi")
 
-    tic_tac_toe.set_symbol(p1, p2)
+    print(p1.__symbol)
+
+    Player.set_symbol(p1, p2)
 
     for index, val in enumerate(board.cells):
         if index == 0:
@@ -18,10 +23,10 @@ def main() -> None:
         val = "X"
         board.cells[index] = val
 
-    print(p1.symbol)
-    print(p2.symbol)
+    print(p1.__symbol)
+    print(p2.__symbol)
 
-    game = tic_tac_toe.Game(board.cells, p1, p2)
+    game = Game(board.cells, p1, p2)
 
     print(game.player1, game.player2, game, board)
     print(game.check_for_win(board))
