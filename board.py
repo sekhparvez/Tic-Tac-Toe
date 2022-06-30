@@ -2,7 +2,7 @@ class Board:
 
     def __init__(self) -> None:
         print("Board object created")
-        self.cells = [" ", " ", " ", " ", " ", " ", " ", " ", " ", " "]
+        self.cells = ["-", "-", "-", "-", "-", "-", "-", "-", "-", "-"]
 
     # Step 4: Write a function to show the board as we will show the
     # board multiple times to the users while they are playing.(done)
@@ -15,5 +15,5 @@ class Board:
     # Step 2: Write a function to check whether the board is filled or not.(done)
     # Iterate over the board and return false if the board contains an empty sign or else return true.
     def is_board_filled(self) -> bool:
-        for val in self.cells:
-            return True if val != " " and self.cells[0] == " " else False
+        for index in range(1, len(self.cells)):
+            return True if self.cells[index] != "-" else False
