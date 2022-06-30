@@ -8,7 +8,7 @@ class Player:
         self.__symbol = ""
 
     def __str__(self) -> str:
-        return f"Player Name: {self.__name} \n Player Symbol: {self.__symbol}"
+        return f"Player Name: {self.__name}  Player Symbol: {self.__symbol}\n"
 
     @property
     def name(self):
@@ -28,11 +28,11 @@ class Player:
     def set_symbol(player1, player2) -> None:
         print("choose symbol")
         player1.__symbol = input("Please choose X or O \n")
-        if player1.__symbol.upper() != 'X' or player1.__symbol.upper() != 'O':
-            raise Exception("Wrong Symbol chosen")
+        if player1.__symbol.upper() == 'X' or player1.__symbol.upper() == 'O':
+            player2.__symbol = 'O' if player1.__symbol == 'X' else 'X'
 
         else:
-            player2.__symbol = 'O' if player1.__symbol == 'X' else 'X'
+            raise Exception("Wrong Symbol chosen")
 
 
 if __name__ == "__main__":
