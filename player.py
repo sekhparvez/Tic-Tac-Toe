@@ -28,7 +28,11 @@ class Player:
     def set_symbol(player1, player2) -> None:
         print("choose symbol")
         player1.__symbol = input("Please choose X or O \n")
-        player2.__symbol = 'O' if player1.__symbol == 'X' else 'X'
+        if player1.__symbol.upper() != 'X' or player1.__symbol.upper() != 'O':
+            raise Exception("Wrong Symbol chosen")
+
+        else:
+            player2.__symbol = 'O' if player1.__symbol == 'X' else 'X'
 
 
 if __name__ == "__main__":
